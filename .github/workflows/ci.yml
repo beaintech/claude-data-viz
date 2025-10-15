@@ -19,3 +19,5 @@ jobs:
           pip install -r requirements.txt
       - name: Test
         run: pytest -q
+      - name: Set PYTHONPATH
+        run: echo "PYTHONPATH=$PYTHONPATH:$(pwd)/src" >> $GITHUB_ENV
